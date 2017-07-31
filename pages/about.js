@@ -1,3 +1,5 @@
+import Layout from '../compoents/Layout.js'
+
 export default () => (
-  <div>About us</div>
+  <Layout>About us</Layout>
 )

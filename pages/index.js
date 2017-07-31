@@ -3,8 +3,6 @@ import Layout from '../compoents/Layout.js'
 
 export default () => {
   return (
-    <Layout>
-      gfhgfh
-    </Layout>
+    <Layout title="test" content="home page"></Layout>
   )
 }

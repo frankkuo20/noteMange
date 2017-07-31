@@ -50,7 +50,7 @@ class NavigationLink extends PureComponent {
   }
 }
 
-export default ({children}) => {
+export default ({title, content}) => {
   const closeButton = (
     <Button
       icon
@@ -61,7 +61,7 @@ export default ({children}) => {
       close
     </Button>
   )
-  console.log(children);
+  
   return (
     <div>
       <Head>
@@ -83,6 +83,14 @@ export default ({children}) => {
           <ListItem
             key='1'
             component={NavigationLink}
+            href='/about'
+            leftIcon={<FontIcon>star</FontIcon>}
+            tileClassName='md-list-tile--mini'
+            primaryText={'About'}
+          />, 
+          <ListItem
+            key='2'
+            component={NavigationLink}
             href='/non-existing-page'
             leftIcon={<FontIcon>star</FontIcon>}
             tileClassName='md-list-tile--mini'
@@ -97,9 +105,9 @@ export default ({children}) => {
         toolbarTitle='Hello, World!'
         toolbarActions={closeButton}
       >
-        <h1>Hello Next.js!</h1>
-        <h1>{children}</h1>
-        <h1>line three</h1>
+        <h1>{title}</h1>
+        <p style={{background: "red"}}>{content}</p>
+        
       </NavigationDrawer>
     </div>
   )
