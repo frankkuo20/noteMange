@@ -1,1 +1,5 @@
+docker run 
+
 docker exec -it next npm run dev
+
+// --watch-poll

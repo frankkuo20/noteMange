@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next --watch-poll",
+    "dev": "next",
     "build": "next build",
-    "start": "next start", 
+    "start": "next start",
     "build-css": "node-sass sass/ -o static"
   },
   "author": "",
