@@ -1,3 +1,6 @@
+* {
+  border: 1px solid red;
+}
 .md-display-4 {
   letter-spacing: -.1px; }
 
