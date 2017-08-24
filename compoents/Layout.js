@@ -50,7 +50,7 @@ class NavigationLink extends PureComponent {
   }
 }
 
-export default ({title, content}) => {
+export default ({children, title, content}) => {
   const closeButton = (
     <Button
       icon
@@ -95,9 +95,24 @@ export default ({title, content}) => {
             leftIcon={<FontIcon>star</FontIcon>}
             tileClassName='md-list-tile--mini'
             primaryText={'404 page'}
+          />,
+          <ListItem
+            key='3'
+            component={NavigationLink}
+            href='/test'
+            leftIcon={<FontIcon>star</FontIcon>}
+            tileClassName='md-list-tile--mini'
+            primaryText={'404 page'}
+          />, 
+          <ListItem
+            key='4'
+            component={NavigationLink}
+            href='/reduxEx'
+            leftIcon={<FontIcon>star</FontIcon>}
+            tileClassName='md-list-tile--mini'
+            primaryText={'404 page'}
           />
         ]}
-        contentClassName='md-grid'
         drawerHeaderChildren={drawerHeaderChildren}
         mobileDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY_MINI}
         tabletDrawerType={NavigationDrawer.DrawerTypes.PERSISTENT_MINI}
@@ -105,9 +120,10 @@ export default ({title, content}) => {
         toolbarTitle='Hello, World!'
         toolbarActions={closeButton}
       >
+      {/*contentClassName='md-grid'  */}
         <h1>{title}</h1>
         <p style={{background: "red"}}>{content}</p>
-        
+        <div>{children}</div>
       </NavigationDrawer>
     </div>
   )
