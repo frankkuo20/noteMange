@@ -111,6 +111,14 @@ export default ({children, title, content}) => {
             leftIcon={<FontIcon>star</FontIcon>}
             tileClassName='md-list-tile--mini'
             primaryText={'404 page'}
+          />, 
+          <ListItem
+            key='5'
+            component={NavigationLink}
+            href='/users'
+            leftIcon={<FontIcon>people</FontIcon>}
+            tileClassName='md-list-tile--mini'
+            primaryText={'users page'}
           />
         ]}
         drawerHeaderChildren={drawerHeaderChildren}

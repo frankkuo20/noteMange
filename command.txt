@@ -3,3 +3,12 @@ docker run
 docker exec -it next npm run dev
 
 // --watch-poll
+
+
+docker run -itd -v ${pwd}/postgresData:/var/lib/postgresql/dat
+a -p 5433:5432 --name postgres postgres
+
+su postgres
+createuser -P
+createdb
+grant all privileges on DATABASE "noteMangeDB" to "noteMange";
