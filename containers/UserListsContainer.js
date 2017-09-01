@@ -6,7 +6,6 @@ import UserLists from '../compoents/users/UserLists'
 
 
 const mapStateToProps = (state) => {
-
   return {
     userLists: state.userListsReducer.userLists, 
     userLists_loading: state.userListsReducer.userLists_loading 

@@ -3,11 +3,11 @@ import React from 'react'
 import Link from 'next/link'
 import 'isomorphic-fetch'
 import User from './User'
+import Button from 'react-md/lib/Buttons/Button'
 
 export default class UserLists extends React.PureComponent {
 
   componentDidMount() {
-    console.log('did');
     this.props.getUserLists()
   }
 
@@ -22,7 +22,9 @@ export default class UserLists extends React.PureComponent {
     }
     return (
       <div>
-        <button onClick={getUserLists}> refresh page </button>
+        <Button raised primary onClick={getUserLists} label='refresh'/> 
+        <Button raised secondary label='create' href='/userCreate' /> 
+        <br /><br />
         <div>
           { userLists.map( (user) => 
             <User key={user.id} {...user} />
