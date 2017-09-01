@@ -4,6 +4,7 @@ import * as countAction from '../actions/countAction'
 import { PureComponent } from 'react'
 
 class AddCount extends PureComponent {
+  
   render () {
     const { addCount, subCount, payload } = this.props
     

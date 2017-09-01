@@ -12,3 +12,4 @@ su postgres
 createuser -P
 createdb
 grant all privileges on DATABASE "noteMangeDB" to "noteMange";
+

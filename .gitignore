@@ -1,3 +1,6 @@
 /node_modules/
 .idea
 .next
+/postgresData/
+*.cpython*
+db.sqlite3

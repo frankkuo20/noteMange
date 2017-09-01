@@ -11,5 +11,4 @@ export const subCount = () => {
     return {
         type: SUB_COUNT
     }
-    
 }
