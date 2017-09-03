@@ -9,7 +9,7 @@ import UserListsContainer from '../containers/UserListsContainer'
 export default () => {
   return (
       <Provider store={configureStore}>
-        <Layout title="users page" content="test content">
+        <Layout title="users page">
           <UserListsContainer />
         </Layout>
       </Provider>

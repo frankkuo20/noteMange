@@ -4,6 +4,8 @@ import Link from 'next/link'
 import 'isomorphic-fetch'
 import User from './User'
 import Button from 'react-md/lib/Buttons/Button'
+import TableBody from 'react-md/lib/DataTables/TableBody';
+
 
 export default class UserLists extends React.PureComponent {
 
@@ -25,11 +27,11 @@ export default class UserLists extends React.PureComponent {
         <Button raised primary onClick={getUserLists} label='refresh'/> 
         <Button raised secondary label='create' href='/userCreate' /> 
         <br /><br />
-        <div>
+        <TableBody>
           { userLists.map( (user) => 
             <User key={user.id} {...user} />
           )}
-        </div>
+        </TableBody>
       </div>
     )
   }
@@ -43,3 +45,6 @@ export default class UserLists extends React.PureComponent {
 //   const props = {firstName: 'Ben', lastName: 'Hector'};
 //   return <Greeting {...props} />;
 // }
+
+
+
