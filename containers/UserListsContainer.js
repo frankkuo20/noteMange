@@ -15,7 +15,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     dispatch,
-    getUserLists: () => dispatch(usersAction.userLists())
+    getUserLists: () => dispatch(usersAction.userLists()), 
+    editBtn: () => dispatch(usersAction)
   }
 };
 

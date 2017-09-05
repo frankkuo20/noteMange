@@ -4,7 +4,13 @@ import Link from 'next/link'
 import 'isomorphic-fetch'
 import User from './User'
 import Button from 'react-md/lib/Buttons/Button'
+import DataTable from 'react-md/lib/DataTables/DataTable';
+import TableHeader from 'react-md/lib/DataTables/TableHeader';
 import TableBody from 'react-md/lib/DataTables/TableBody';
+import TableRow  from 'react-md/lib/DataTables/TableRow';
+import TableColumn  from 'react-md/lib/DataTables/TableColumn';
+import TablePagination from 'react-md/lib/DataTables/TablePagination';
+import FontIcon from 'react-md/lib/FontIcons';
 
 
 export default class UserLists extends React.PureComponent {
@@ -24,14 +30,26 @@ export default class UserLists extends React.PureComponent {
     }
     return (
       <div>
-        <Button raised primary onClick={getUserLists} label='refresh'/> 
-        <Button raised secondary label='create' href='/userCreate' /> 
+        <Button raised primary onClick={getUserLists} label='refresh' iconClassName="fa fa-refresh" /> 
+        <Button raised secondary label='create' href='/userCreate' iconClassName="fa fa-plus" /> 
         <br /><br />
-        <TableBody>
-          { userLists.map( (user) => 
-            <User key={user.id} {...user} />
-          )}
-        </TableBody>
+        <DataTable plain baseId="users">
+          <TableHeader>
+            <TableRow>
+              <TableColumn>Username</TableColumn>
+              <TableColumn>Email</TableColumn>
+              <TableColumn></TableColumn>
+            </TableRow>
+          </TableHeader>
+
+          <TableBody>
+            { userLists.map( (user) => 
+              <User key={user.id} {...user} />
+            )}
+          </TableBody>
+          {/* <TablePagination onPagination={this._handlePagination} rows={rows} /> */}
+
+        </DataTable>
       </div>
     )
   }

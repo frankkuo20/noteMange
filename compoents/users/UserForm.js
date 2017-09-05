@@ -10,6 +10,7 @@ import Router from 'next/router'
 class UserForm extends React.PureComponent {
 
   render () {
+    console.log(Router.router)
     const { 
         handleSubmit, userCreate, errorMsg, createSussess
     } = this.props
