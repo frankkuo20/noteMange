@@ -5,13 +5,19 @@ import AddCount from '../containers/AddCount'
 import configureStore from '../store/configureStore';
 
 import UserListsContainer from '../containers/UserListsContainer'
+import React from 'react'
 
-export default () => {
-  return (
+class Users extends React.PureComponent{
+
+  render(){
+    return (
       <Provider store={configureStore}>
         <Layout title="users page">
           <UserListsContainer />
         </Layout>
       </Provider>
-  )
+    )
+  }
 }
+
+export default Users

@@ -4,17 +4,22 @@ import Layout from '../compoents/Layout.js'
 import AddCount from '../containers/AddCount'
 import configureStore from '../store/configureStore';
 
-import UserFormContainer from '../containers/UserFormContainer'
-import Router from 'next/router'
+import UserFormUpdateContainer from '../containers/UserFormUpdateContainer'
+
 import React from 'react'
 
 class UserUpdate extends React.PureComponent {
-  render(){
 
+  static getInitialProps ({ query: { id } }) {
+    return { id }
+  }
+  render(){
+    const { id } = this.props
+    
     return (
       <Provider store={configureStore}>
         <Layout title="user update page">
-          <UserFormContainer />
+          <UserFormUpdateContainer id={id} />
         </Layout>
       </Provider>
   )

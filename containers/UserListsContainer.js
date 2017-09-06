@@ -15,8 +15,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     dispatch,
-    getUserLists: () => dispatch(usersAction.userLists()), 
-    editBtn: () => dispatch(usersAction)
+    getUserLists: () => dispatch(usersAction.userLists()),
+    userDelete: (id) => dispatch(usersAction.userDelete(id))
   }
 };
 

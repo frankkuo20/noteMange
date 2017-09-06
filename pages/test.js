@@ -2,6 +2,7 @@ import Layout from '../compoents/Layout.js'
 import { PureComponent } from 'react';
 
 class Test extends PureComponent {
+  
   render() {
     return (
       <Layout title='flux page'>

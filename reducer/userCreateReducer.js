@@ -9,7 +9,7 @@ const initialState = {
 	createSussess: false
 }
 
-const userListsReducer = (state = initialState, action) => {
+const userCreateReducer = (state = initialState, action) => {
 
 	switch (action.type) {
 		case USER_CREEATE_LOADING:
@@ -37,4 +37,4 @@ const userListsReducer = (state = initialState, action) => {
 	}
 }
 
-export default userListsReducer;
+export default userCreateReducer;

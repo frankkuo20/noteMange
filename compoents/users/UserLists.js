@@ -14,13 +14,18 @@ import FontIcon from 'react-md/lib/FontIcons';
 
 
 export default class UserLists extends React.PureComponent {
-
+  
   componentDidMount() {
     this.props.getUserLists()
   }
+  
 
   render () {
-    const { userLists, getUserLists, userLists_loading } = this.props
+    
+    const { userLists, getUserLists, userLists_loading, 
+      userDelete
+    } = this.props
+    
     if (userLists_loading){
       return (
         <div>
@@ -44,12 +49,13 @@ export default class UserLists extends React.PureComponent {
 
           <TableBody>
             { userLists.map( (user) => 
-              <User key={user.id} {...user} />
+              <User key={user.id} {...user} userDelete={userDelete} />
             )}
           </TableBody>
           {/* <TablePagination onPagination={this._handlePagination} rows={rows} /> */}
 
         </DataTable>
+
       </div>
     )
   }
