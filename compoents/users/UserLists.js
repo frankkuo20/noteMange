@@ -23,7 +23,7 @@ export default class UserLists extends React.PureComponent {
   render () {
     
     const { userLists, getUserLists, userLists_loading, 
-      userDelete, dialogOpen, dialogClose, dialogVisible
+      userDelete
     } = this.props
     
     if (userLists_loading){
