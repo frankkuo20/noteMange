@@ -10,7 +10,12 @@ import Router from 'next/router'
 class UserForm extends React.PureComponent {
     
     componentDidMount() {
-        this.props.getUser()
+        
+        const {getUser} = this.props
+        if (getUser){
+            this.props.getUser()
+        }
+        
     }
 
     render() {

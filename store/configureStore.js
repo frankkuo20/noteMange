@@ -12,6 +12,7 @@ import userUpdateReducer from '../reducer/userUpdateReducer'
 const Reducers = combineReducers({
   addCountReducer, 
   userListsReducer, 
+  userCreateReducer, 
   userUpdateReducer,
   form: formReducer
 });

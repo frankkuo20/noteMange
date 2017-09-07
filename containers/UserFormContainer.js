@@ -7,6 +7,7 @@ import UserForm from '../compoents/users/UserForm'
 
 const mapStateToProps = (state) => {
   const { errorMsg, createSussess } = state.userCreateReducer
+  
   return {
     errorMsg, 
     createSussess
