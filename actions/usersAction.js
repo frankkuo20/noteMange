@@ -27,6 +27,7 @@ export const  userLists_success = (data) => {
 export const userLists = () => {
     
   return (dispatch) => {
+
     dispatch(userLists_loading())
     fetch('http://localhost:8000/api/users/', {
       method: 'GET',
@@ -216,13 +217,13 @@ export const getUser = (id) => {
         }
       }).then( (response) => {
         const { status } = response
-        if (status==200){ // created
-          response.json().then( (json) => {
-            dispatch(userDelete_success());            
-          })
+        if (status==204){ 
+          // dispatch(userDelete_success());   
+          dispatch(userLists())
+          
         }else if (status==404){
           response.json().then( (json) => {
-            dispatch(userDelete_fail());            
+            dispatch(userDelete_fail());           
             
           })
         }

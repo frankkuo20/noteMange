@@ -26,6 +26,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^rest/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api/', include(router.urls)),
-    url(r'^$', include('api.urls', namespace='main')),
+    url(r'^', include('api.urls', namespace='main')),
 
 ]

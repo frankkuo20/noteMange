@@ -21,6 +21,7 @@ class User extends React.PureComponent {
     
       confirmDialog = (id) => {
           this.props.userDelete(id)
+          this.closeDialog()
       }
     render() {
         const { visible } = this.state
@@ -39,7 +40,7 @@ class User extends React.PureComponent {
             <Dialog
                 id="deleteConfirm"
                 visible={visible}
-                title="Confirm Delete?"
+                title={"Confirm Delete?"+username}
                 onHide={this.closeDialog}
                 aria-labelledby="deleteConfirm"
                 modal

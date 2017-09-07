@@ -1,6 +1,6 @@
 import { 
 	USER_LISTS, USER_LISTS_LOADING, 
-	USER_UPDATE_SUCCESS
+	USER_DELETE_SUCCESS
 } from '../constants/usersActionTypes'
 
 const initialState = {
@@ -9,7 +9,7 @@ const initialState = {
 	deleteSuccess: false
 }
 
-const userListsReducer = (state = initialState, action) =>{
+const userListsReducer = (state = initialState, action) => {
 	
 	switch(action.type){
 		case USER_LISTS_LOADING:
@@ -24,7 +24,7 @@ const userListsReducer = (state = initialState, action) =>{
 				deleteSuccess: false
 			})
 
-		case USER_UPDATE_SUCCESS:
+		case USER_DELETE_SUCCESS:
 			return Object.assign({}, state, {
 				deleteSuccess: true
 			})

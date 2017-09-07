@@ -23,7 +23,7 @@ export default class UserLists extends React.PureComponent {
   render () {
     
     const { userLists, getUserLists, userLists_loading, 
-      userDelete
+      userDelete, dialogOpen, dialogClose, dialogVisible
     } = this.props
     
     if (userLists_loading){
@@ -35,7 +35,7 @@ export default class UserLists extends React.PureComponent {
     }
     return (
       <div>
-        <Button raised primary onClick={getUserLists} label='refresh' iconClassName="fa fa-refresh" /> 
+        <Button raised primary onClick={() => getUserLists()} label='refresh' iconClassName="fa fa-refresh" /> 
         <Button raised secondary label='create' href='/userCreate' iconClassName="fa fa-plus" /> 
         <br /><br />
         <DataTable plain baseId="users">
@@ -49,7 +49,9 @@ export default class UserLists extends React.PureComponent {
 
           <TableBody>
             { userLists.map( (user) => 
-              <User key={user.id} {...user} userDelete={userDelete} />
+              <User key={user.id} {...user} userDelete={userDelete} 
+              getUserLists = {getUserLists}
+              />
             )}
           </TableBody>
           {/* <TablePagination onPagination={this._handlePagination} rows={rows} /> */}

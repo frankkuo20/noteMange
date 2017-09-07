@@ -33,3 +33,16 @@ class UserViewSet(viewsets.ModelViewSet):
 #             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 #         serializer.save()
 #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+def initData(request):
+    User.objects.all().delete()
+    for i in range(10):
+        username = 'username' + str(i)
+        email = username + '@gmail.com'
+        User.objects.create(username=username,
+                            email=email)
+
+
+
+    return HttpResponse('success')
+
