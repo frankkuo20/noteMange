@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start",
     "build-css": "node-sass sass/ -o static", 
-    "start2": "NODE_ENV=production node server.js"
+    "start2": "NODE_ENV=production node server.js", 
+    "start3": "npm run build && npm run start"
   },
   "author": "",
   "license": "ISC",
