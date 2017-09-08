@@ -8,7 +8,8 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "next start",
-    "build-css": "node-sass sass/ -o static"
+    "build-css": "node-sass sass/ -o static", 
+    "start2": "NODE_ENV=production node server.js"
   },
   "author": "",
   "license": "ISC",
