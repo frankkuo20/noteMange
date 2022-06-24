@@ -28,6 +28,6 @@
     "redux": "^3.7.2",
     "redux-form": "^7.0.3",
     "redux-thunk": "^2.2.0",
-    "node-fetch": ">=2.6.1"
+    "node-fetch": ">=2.6.7"
   }
 }
